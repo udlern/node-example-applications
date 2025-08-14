@@ -1,64 +1,13 @@
-# Node.js Example App with SSO powered by WorkOS
+# The Steps I Took to Run the App Locally:
 
-An example application demonstrating how to use the [WorkOS Node.js SDK](https://github.com/workos/workos-node) to authenticate users via SSO.
+1. Forked the [example application repository](https://github.com/workos/workos-node) to create my [public repository](https://github.com/udlern/node-example-applications.git).
+2. Cloned my repository via GitHub CLI to my computer.
+3. Opened repository in VS Code via the terminal using `code .`.
+4. Navigated into the node-sso-example folder and installed the dependencies using `npm install`.
+5. Started the server and went to `http://localhost:8000/` to begin the login flow using `npm start`.
 
-## Prerequisites
+# Additional Information:
 
-Node.js version 10+
+I followed the [SSO authentication flow instructions](https://workos.com/docs/sso/guide/.introduction) to create a new SSO connection in my WorkOS dashboard, and configured the necessary code in my app to integrate the SSO connection with and the ability to sign into the app using the Test Provider. This included creating a `.env` file to add the Client ID and API Key from my WorkOS dashboard and adding my Organization ID and Redirect URI (`http://localhost:8000/callback`) into the `index.js` file.
 
-## Node.js Project Setup
-
-1. Clone the main repo and install dependencies for the app you'd like to use:
-
-    ```bash
-    # HTTPS
-    git clone https://github.com/workos/node-example-applications.git
-    ```
-
-    or
-
-    ```bash
-    # SSH
-    git clone git@github.com:workos/node-example-applications.git
-    ```
-
-2. Navigate to the SSO app within the cloned repo.
-
-    ```bash
-    cd node-example-applications/node-sso-example
-    ```
-
-3. Install the dependencies.
-    ```bash
-    npm install
-    ```
-
-## Configure your environment
-
-4. Grab your API Key and Client ID from your WorkOS Dashboard. Create a `.env`
-   file at the project root, and store them like so:
-
-    ```bash
-    WORKOS_API_KEY=sk_xxxxxxxxxxxxx
-    WORKOS_CLIENT_ID=project_xxxxxxxxxxxx
-    ```
-
-## SSO Setup with WorkOS
-
-5. Follow the [SSO authentication flow instructions](https://workos.com/docs/sso/guide/introduction) to create a new SSO connection in your WorkOS dashboard.
-
-6. Add `http://localhost:8000/callback` as a Redirect URI in the Configuration section of the Dashboard.
-
-7. Update `routes/index.js` with the Organization ID.
-
-## Testing the Integration
-
-8. Start the server and head to http://localhost:8000/ to begin the login flow:
-
-```sh
-npm start
-```
-
-## Need help?
-
-If you get stuck and aren't able to resolve the issue by reading our [WorkOS Node.js SDK documentation](https://docs.workos.com/sdk/node), API reference, or tutorials, you can reach out to us at support@workos.com and we'll lend a hand.
+Screen recording of successfully authenticating my user and logging into my app with my SSO connection via the Test Provider and seeing my **first and last name**, as well as the **organization name** on the first page of my app: https://drive.google.com/file/d/15Por8tA2K4gH_nfr9czCvN9FJf9gfJJV/view?usp=sharing.
